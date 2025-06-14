@@ -43,31 +43,6 @@ A simple full-stack Bookstore application built using the MERN stack (MongoDB, E
 
 ---
 
-## Folder Structure
-
-MERN-BOOKSTORE/
-├── client/ # React frontend
-│ ├── src/
-│ └── public/
-├── server/ # Node backend
-│ ├── routes/
-│ ├── models/
-│ ├── connection/
-│ └── index.js
-
-
-
----
-
-## Environment Variables (Backend)
-
-Create a `.env` file inside the `server` directory with the following content:
-
-DB_USERNAME=your_mongodb_username
-DB_PASSWORD=your_mongodb_password
-
-
-> These are used to connect to MongoDB Atlas.
 
 ---
 
