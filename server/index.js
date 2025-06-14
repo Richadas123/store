@@ -4,7 +4,10 @@ const dotenv=require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = 5000;
+// const port = 5000;
+
+const port = process.env.PORT || 5000;
+
 
 
 const cors=require("cors");
@@ -16,7 +19,7 @@ const morgan=require("morgan");
 
 //middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://mern-book-store-client.vercel.app', 'https://bookstore.nishantpatil.me/'],
+  origin: ['http://localhost:5173'],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));

@@ -15,7 +15,7 @@ const DeleteBook = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.delete(`https://bookstore-server-po8m.onrender.com/api/v1/delete/${id}`);
+      const res = await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/v1/delete/${id}`);
       enqueueSnackbar('Book deleted successfully', { variant: 'success' });
       navigate('/');
     } catch (error) {
@@ -33,8 +33,8 @@ const DeleteBook = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className='bg-white shadow-md rounded p-4'>
-          <h3 className='text-2xl mb-4'>Are you sure you want to delete book with ID: {id}?</h3>
+        <div className='bg-white dark:bg-gray-800 shadow-md rounded p-4'>
+          <h3 className='text-2xl mb-4 text-gray-800 dark:text-white'>Are you sure you want to delete book with ID: {id}?</h3>
           <button
             onClick={handleDeleteBook}
             className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'

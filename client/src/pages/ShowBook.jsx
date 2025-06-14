@@ -12,7 +12,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://bookstore-server-po8m.onrender.com/api/v1/book/${id}`)
+      .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/book/${id}`)
       .then((resp) => {
         setBook(resp.data);
         setLoading(false);
@@ -39,8 +39,8 @@ const ShowBook = () => {
           ) : (
             <>
               <div className="mb-4">
-                <label className="block text-gray-600 text-xl font-semibold">Title:</label>
-                <p className="text-xl text-gray-800">{book.data.title}</p>
+                <label className="block text-gray-600 dark:text-gray-300 text-xl font-semibold">Title:</label>
+                <p className="text-xl text-gray-800 dark:text-white">{book.data.title}</p>
               </div>
               <div className="mb-4">
                 <label className="block text-gray-600 text-xl font-semibold">Genre:</label>

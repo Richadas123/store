@@ -21,7 +21,7 @@ const UpdateBook = () => {
     const fetchBook = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`https://bookstore-server-po8m.onrender.com/api/v1/book/${id}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/book/${id}`);
         const { title, genre, author, year, pages, publisher } = res.data.data;
         setTitle(title);
         setGenre(genre);
@@ -47,7 +47,7 @@ const UpdateBook = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.put(`https://bookstore-server-po8m.onrender.com/api/v1/update/${id}`, {
+      const res = await axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/v1/update/${id}`, {
         title,
         genre,
         author,
@@ -72,7 +72,7 @@ const UpdateBook = () => {
       <form onSubmit={handleEditBook}>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label htmlFor="title" className="text-xl text-gray-500">
+            <label htmlFor="title" className="text-xl text-gray-500 dark:text-gray-300">
               Title
             </label>
             <input
@@ -81,11 +81,11 @@ const UpdateBook = () => {
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="border-2 border-slate-400 rounded-md p-2 w-full"
+              className="border-2 border-slate-400 rounded-md p-2 w-full bg-white dark:bg-gray-700 dark:text-white"
             />
           </div>
           <div>
-            <label htmlFor="genre" className="text-xl text-gray-500">
+            <label htmlFor="genre" className="text-xl text-gray-500 dark:text-gray-300">
               Genre
             </label>
             <input
@@ -94,11 +94,11 @@ const UpdateBook = () => {
               id="genre"
               value={genre}
               onChange={(e) => setGenre(e.target.value)}
-              className="border-2 border-slate-400 rounded-md p-2 w-full"
+              className="border-2 border-slate-400 rounded-md p-2 w-full bg-white dark:bg-gray-700 dark:text-white"
             />
           </div>
           <div>
-            <label htmlFor="author" className="text-xl text-gray-500">
+            <label htmlFor="author" className="text-xl text-gray-500 dark:text-gray-300">
               Author
             </label>
             <input
@@ -107,11 +107,11 @@ const UpdateBook = () => {
               id="author"
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
-              className="border-2 border-slate-400 rounded-md p-2 w-full"
+              className="border-2 border-slate-400 rounded-md p-2 w-full bg-white dark:bg-gray-700 dark:text-white"
             />
           </div>
           <div>
-            <label htmlFor="year" className="text-xl text-gray-500">
+            <label htmlFor="year" className="text-xl text-gray-500 dark:text-gray-300">
               Publish Year
             </label>
             <input
@@ -120,11 +120,11 @@ const UpdateBook = () => {
               id="year"
               value={year}
               onChange={(e) => setYear(e.target.value)}
-              className="border-2 border-slate-400 rounded-md p-2 w-full"
+              className="border-2 border-slate-400 rounded-md p-2 w-full bg-white dark:bg-gray-700 dark:text-white"
             />
           </div>
           <div>
-            <label htmlFor="pages" className="text-xl text-gray-500">
+            <label htmlFor="pages" className="text-xl text-gray-500 dark:text-gray-300">
               Pages
             </label>
             <input
@@ -133,11 +133,11 @@ const UpdateBook = () => {
               id="pages"
               value={pages}
               onChange={(e) => setPages(e.target.value)}
-              className="border-2 border-slate-400 rounded-md p-2 w-full"
+              className="border-2 border-slate-400 rounded-md p-2 w-full bg-white dark:bg-gray-700 dark:text-white"
             />
           </div>
           <div>
-            <label htmlFor="publisher" className="text-xl text-gray-500">
+            <label htmlFor="publisher" className="text-xl text-gray-500 dark:text-gray-300">
               Publisher
             </label>
             <input
@@ -146,7 +146,7 @@ const UpdateBook = () => {
               id="publisher"
               value={publisher}
               onChange={(e) => setPublisher(e.target.value)}
-              className="border-2 border-slate-400 rounded-md p-2 w-full"
+              className="border-2 border-slate-400 rounded-md p-2 w-full bg-white dark:bg-gray-700 dark:text-white"
             />
           </div>
         </div>
