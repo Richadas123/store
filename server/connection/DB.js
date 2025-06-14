@@ -4,8 +4,8 @@ const dotenv=require('dotenv');
 dotenv.config();
 
 
-DB_USERNAME=process.env.DB_USERNAME;
-DB_PASSWORD=process.env.DB_PASSWORD;
+const DB_USERNAME=process.env.DB_USERNAME;
+const DB_PASSWORD=process.env.DB_PASSWORD;
 
 const db_link=`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@bookstore.byf2zpq.mongodb.net/?retryWrites=true&w=majority`;
 // mongodb+srv://<db_username>:<db_password>@bookstore.byf2zpq.mongodb.net/
